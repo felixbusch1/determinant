@@ -12,7 +12,8 @@ pip install numpy
 
 ## Usage
 
-Calculate the determinant of a 3x3 matrix
+Calculate the determinant of a 3x3 matrix. Note: the input matrix must be in numpy format.
+For example numpy.matrix('1 2; 3 4')
 
 ```bash
 python det.py -m '1 2 3; 4 5 6; 7 8 9' -d 3
