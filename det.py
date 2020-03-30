@@ -27,7 +27,6 @@ args = parser.parse_args()
 #	     n	   := Dimension of the input matrix. In this example abolve n=2 of a 2x2 matrix
 #
 # Return value: The index of the column with the most number of zeros in it.
-
 def getBestColumn(matrix, n):
     col = currentNumberOfZeros = totalNumberOfZeros = 0
 
@@ -47,11 +46,11 @@ def getBestColumn(matrix, n):
                     totalNumberOfZeros = currentNumberOfZeros
                     col = i
    	    
-	        #Reset for next iteration
-            currentNumberOfZeros = 0
+	    #Reset for next iteration
+        currentNumberOfZeros = 0
 	
-	    #Return the index of the column. 	
-        return col
+	#Return the index of the column.
+    return col
 
 
 
