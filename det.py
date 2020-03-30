@@ -69,7 +69,7 @@ def getBestColumn(matrix, n):
 
 def det(matrix, n):
     if n == 1:
-	return matrix.item(0)
+        return matrix.item(0)
     #In case the dimension of the input matrix is n=2 
     if n == 2:
         return matrix.item(0) * matrix.item(3) - matrix.item(1) * matrix.item(2)
