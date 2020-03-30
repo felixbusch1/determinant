@@ -13,7 +13,7 @@ parser.add_argument("-d", "--dimension", action="store", type=int, dest="dimensi
 
 args = parser.parse_args()
 
-# Function name: getBestColumn()
+# Function name: getBestColumn() (optional in this implementation)
 #
 # Description: This function returns the index of the column of the input matrix
 # 	       with the most number of zeros in it. If there are no zeros in the matrix,
