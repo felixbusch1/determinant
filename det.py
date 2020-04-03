@@ -13,46 +13,6 @@ parser.add_argument("-d", "--dimension", action="store", type=int, dest="dimensi
 
 args = parser.parse_args()
 
-# Function name: getBestColumn() (optional in this implementation)
-#
-# Description: This function returns the index of the column of the input matrix
-# 	       with the most number of zeros in it. If there are no zeros in the matrix,
-#	       the first column (index 0) will be returned.When we calculate the determinant 
-#              of the matrix, we select the column with the most number of zeros, to have
-#              a zero factor in multiplication. This function is optional.
-#
-# Parameters: matrix, n
-#
-#	     matrix:= Input matrix in numpy format (e.g 2x2 numpy.matrix('1 2; 3 4'))
-#	     n	   := Dimension of the input matrix. In this example abolve n=2 of a 2x2 matrix
-#
-# Return value: The index of the column with the most number of zeros in it.
-def getBestColumn(matrix, n):
-    col = currentNumberOfZeros = totalNumberOfZeros = 0
-
-    for i in range(n):
-        
-        #Select the i-th column vector of the matrix
-        vector = matrix[:,[i]]
-	
-    	#Count the zeros for every entry in the vector
-        for j in range(n):
-            if vector.item(j) == 0:
-                currentNumberOfZeros += 1
-		
-		        #Refresh selected column with the most number of zeros
-		        #Refresh the total number of zeros
-                if currentNumberOfZeros > totalNumberOfZeros:
-                    totalNumberOfZeros = currentNumberOfZeros
-                    col = i
-   	    
-	    #Reset for next iteration
-        currentNumberOfZeros = 0
-	
-	#Return the index of the column.
-    return col
-
-
 
 # Function name: det()
 #
@@ -88,8 +48,8 @@ def det(matrix, n):
 	    #We have to calculate n- subdeterminants
         for i in range(n):
 	    
-	        #Delete the column with the most number of zeros in it	
-            temp = np.delete(matrix, getBestColumn(matrix, n), axis=1)
+	    #Delete the first column	
+            temp = np.delete(matrix, 0, axis=1)
             
             #Delete the i-th row of the matrix
             submatrix = np.delete(temp, i, axis=0)
